@@ -5,7 +5,7 @@ public class ScreenToWorldMapper {
     private ScreenToWorldMapper() {
     }
 
-    private static final int PIXEL_TO_WORLD_UNIT_RATIO = 5;
+    public static final int PIXEL_TO_WORLD_UNIT_RATIO = 5;
 
     /**
      * Maps a click position on the screen to the world 
@@ -31,11 +31,23 @@ public class ScreenToWorldMapper {
      * @return The camera offset position in the world
      */
     private static Vector2 getCameraPositionOffsetToWorld(Vector2 camPos, Vector2 camOffset, float ratio, float zoom) {
-        Vector2 finalPosition = new Vector2(camPos);
+        Vector2 finalPosition = matchCameraPositionToCenterOfWorld(camPos, zoom, ratio);
         finalPosition.add(camOffset);
-        finalPosition.x -= (ratio * zoom) / (2.f / PIXEL_TO_WORLD_UNIT_RATIO);
-        finalPosition.y -= (zoom) / (2.f / PIXEL_TO_WORLD_UNIT_RATIO);
         return finalPosition;
+    }
+
+    /**
+     * Get the camera position to the center of the world 
+     * @param camPos The camera pos
+     * @param zoom The zoom of the world
+     * @param ratio The screen ratio
+     * @return The position as if the cameras position would be center of the world
+     */
+    private static Vector2 matchCameraPositionToCenterOfWorld(Vector2 camPos, float zoom, float ratio) {
+        Vector2 camPosCopy = camPos.cpy();
+        camPosCopy.x -= (ratio * zoom) / 2.0f * PIXEL_TO_WORLD_UNIT_RATIO;
+        camPosCopy.y -= (zoom) / 2.0f * PIXEL_TO_WORLD_UNIT_RATIO;
+        return camPosCopy;
     }
 
     /**
