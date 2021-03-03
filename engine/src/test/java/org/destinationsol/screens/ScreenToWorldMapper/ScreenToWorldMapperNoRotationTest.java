@@ -60,6 +60,7 @@ public class ScreenToWorldMapperNoRotationTest {
             clickPos, 
             camPos,
             0.0f,
+            camPos, 
             1
         );
 
@@ -116,6 +117,7 @@ public class ScreenToWorldMapperNoRotationTest {
             clickPos, 
             camPos,
             0.0f,
+            camPos, 
             1
         );
 
