@@ -30,7 +30,7 @@ public class ScreenToWorldMapperNoRotationTest {
             clickPos, 
             camPos, 
             0.0f,
-            1
+            1.0f
         );
 
         // As the users clicks on the center of the screen and when the camera is in the center of the world,
@@ -60,8 +60,7 @@ public class ScreenToWorldMapperNoRotationTest {
             clickPos, 
             camPos,
             0.0f,
-            camPos, 
-            1
+            1.0f
         );
 
         // As the users clicks on the center of the screen and when the camera is in the center of the world,
@@ -117,7 +116,6 @@ public class ScreenToWorldMapperNoRotationTest {
             clickPos, 
             camPos,
             0.0f,
-            camPos, 
             1
         );
 
