@@ -29,6 +29,7 @@ public class ScreenToWorldMapperNoRotationTest {
             new Vector2(screenWidth, screenHeight), 
             clickPos, 
             camPos, 
+            0.0f,
             1
         );
 
@@ -57,7 +58,8 @@ public class ScreenToWorldMapperNoRotationTest {
         Vector2 worldPos = ScreenToWorldMapper.screenClickPositionToWorldPosition(
             new Vector2(screenWidth, screenHeight), 
             clickPos, 
-            camPos, 
+            camPos,
+            0.0f,
             1
         );
 
@@ -86,6 +88,7 @@ public class ScreenToWorldMapperNoRotationTest {
             new Vector2(screenWidth, screenHeight), 
             clickPos, 
             camPos, 
+            0.0f,
             1
         );
 
@@ -111,7 +114,8 @@ public class ScreenToWorldMapperNoRotationTest {
         Vector2 worldPos = ScreenToWorldMapper.screenClickPositionToWorldPosition(
             new Vector2(screenWidth, screenHeight), 
             clickPos, 
-            camPos, 
+            camPos,
+            0.0f,
             1
         );
 
